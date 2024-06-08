@@ -1,6 +1,7 @@
 package org.jsun.scalax.nn
 
 import org.jsun.scalax.nn.models.{LogisticRegression, LogisticRegressionUsingGraph, Model, OneHiddenLayerNetwork}
+import cats.effect.unsafe.implicits.global
 
 object Main extends App {
 
@@ -26,11 +27,11 @@ object Main extends App {
   val start = System.currentTimeMillis()
 
   // read MNIST dataset
-  val trainLabelFile = "/Users/xiayunsun/Downloads/train-labels-idx1-ubyte"
-  val trainImgFile   = "/Users/xiayunsun/Downloads/train-images-idx3-ubyte"
+  val trainLabelFile = "../MNIST/train-labels-idx1-ubyte"
+  val trainImgFile   = "../MNIST/train-images-idx3-ubyte"
 
-  val testImgFile   = "/Users/xiayunsun/Downloads/t10k-images-idx3-ubyte"
-  val testLabelFile = "/Users/xiayunsun/Downloads/t10k-labels-idx1-ubyte"
+  val testImgFile   = "../MNIST/t10k-images-idx3-ubyte"
+  val testLabelFile = "../MNIST/t10k-labels-idx1-ubyte"
 
   val trainData = Preprocessor.prepTrainData(trainLabelFile, trainImgFile)
   val testData  = Preprocessor.prepTrainData(testLabelFile, testImgFile)

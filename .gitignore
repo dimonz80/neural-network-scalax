@@ -5,3 +5,16 @@
 out
 .ipynb_checkpoints
 
+# common IDEs to be ignored
+.idea/
+.metals/
+.vscode/
+.bsp/
+
+# build tool specific entries
+.bloop
+target
+metals.sbt
+project/project
+
+.DS_Store
